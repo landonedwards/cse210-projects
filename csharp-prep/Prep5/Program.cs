@@ -21,7 +21,7 @@ class Program
         {
             Console.Write("Please enter your name: ");
             string userName = Console.ReadLine();
-            
+
             return userName;
         }
 
@@ -30,7 +30,7 @@ class Program
             Console.Write("Please enter your favorite number: ");
             string fnumber = Console.ReadLine();
             int favNumber = int.Parse(fnumber);
-            
+
             return favNumber;
         }
 
