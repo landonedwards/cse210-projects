@@ -4,20 +4,26 @@ class Program
 {
     static void Main(string[] args)
     {
-        Console.WriteLine("Hello Sandbox World!");
+        // Console.WriteLine($"Howdy World");
+        Costume nurse = new();
 
-        Console.Write("What is your favorite color? ");
-        string color = Console.ReadLine();
+        nurse.headWear = "face mask";
+        nurse.gloves = "latex gloves";
+        nurse.shoes = "orthopedic sneakers";
+        nurse.upperGarment = "scrubs";
+        nurse.lowerGarment = "scrubs";
+        nurse.accessory = "stethoscope";
 
-        if (color == "purple" || color == "Purple")
-        {
-            Console.WriteLine("Purple is my favorite color too.");
-        }
+        Costume detective = new();
 
-        else
-        {
-            Console.WriteLine($"{color} is not my favorite.");
-        }
+        detective.headWear = "fedora";
+        detective.gloves = "leather gloves";
+        detective.shoes = "loafers";
+        detective.upperGarment = "trench coat";
+        detective.lowerGarment = "slacks";
+        detective.accessory = "magnifying glass";
 
+        nurse.ShowWardrobe();
+        detective.ShowWardrobe();
     }
 }
