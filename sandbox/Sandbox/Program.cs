@@ -7,21 +7,21 @@ class Program
         // Console.WriteLine($"Howdy World");
         Costume nurse = new();
 
-        nurse.headWear = "face mask";
-        nurse.gloves = "latex gloves";
-        nurse.shoes = "orthopedic sneakers";
-        nurse.upperGarment = "scrubs";
-        nurse.lowerGarment = "scrubs";
-        nurse.accessory = "stethoscope";
+        nurse._headWear = "face mask";
+        nurse._gloves = "latex gloves";
+        nurse._shoes = "orthopedic sneakers";
+        nurse._upperGarment = "scrubs";
+        nurse._lowerGarment = "scrubs";
+        nurse._accessory = "stethoscope";
 
         Costume detective = new();
 
-        detective.headWear = "fedora";
-        detective.gloves = "leather gloves";
-        detective.shoes = "loafers";
-        detective.upperGarment = "trench coat";
-        detective.lowerGarment = "slacks";
-        detective.accessory = "magnifying glass";
+        detective._headWear = "fedora";
+        detective._gloves = "leather gloves";
+        detective._shoes = "loafers";
+        detective._upperGarment = "trench coat";
+        detective._lowerGarment = "slacks";
+        detective._accessory = "magnifying glass";
 
         nurse.ShowWardrobe();
         detective.ShowWardrobe();
