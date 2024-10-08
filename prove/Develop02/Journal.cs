@@ -1,7 +1,9 @@
 // This is subject to change. I'm not sure if this is correct. 
-class Journal
+public class Journal
 {
     // attributes
+    public List<Entry> _entry;
+    public string _fileName;
 
     // behaviors
     public void AddEntry()
@@ -12,11 +14,7 @@ class Journal
     {
 
     }
-    public void SaveFile()
-    {
-
-    }
-    public void WriteToFile()
+    public void SaveToFile()
     {
 
     }
