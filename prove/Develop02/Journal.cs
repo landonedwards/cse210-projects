@@ -9,7 +9,7 @@ public class Journal
     public int _numOfEntries = 0;
 
     // behaviors
-    public void AddEntry(string date, string prompt, string entry, int numOfEntries)
+    public void AddEntry(string date, string prompt, string entry)
     {
         _numOfEntries += 1;
 
