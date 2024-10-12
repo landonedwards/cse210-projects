@@ -30,6 +30,11 @@ public class Journal
         }
         
         Console.WriteLine($"Total entries: {_numOfEntries}");
+
+        if (_numOfEntries >= 10)
+        {
+            Console.WriteLine("Great job! Keep it up!");
+        }
     }
     public void SaveToFile(string fileName)
     {
