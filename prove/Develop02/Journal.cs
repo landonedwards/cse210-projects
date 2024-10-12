@@ -6,15 +6,18 @@ public class Journal
     // attributes
     public List<Entry> _entries = new();
     public string _fileName;
+    public int _numOfEntries = 0;
 
     // behaviors
-    public void AddEntry(string date, string prompt, string entry)
+    public void AddEntry(string date, string prompt, string entry, int numOfEntries)
     {
+        _numOfEntries += 1;
+
         Entry userEntry = new()
         {
             _date = date,
             _prompt = prompt,
-            _entry = entry
+            _entry = entry,
         };
 
         _entries.Add(userEntry);
@@ -25,6 +28,8 @@ public class Journal
         {
             entry.Display();
         }
+        
+        Console.WriteLine($"Total entries: {_numOfEntries}");
     }
     public void SaveToFile(string fileName)
     {
@@ -48,9 +53,10 @@ public class Journal
             string prompt = parts[1];
             string entry = parts[2];
 
+            // to ensure the entry is complete, with date, prompt, and user's entry. 
             if (parts.Length == 3)
             {
-                                
+            
                 Entry newEntry = new()
                 {
                     _date = date,
@@ -59,6 +65,8 @@ public class Journal
                 };
 
                 _entries.Add(newEntry);
+
+                _numOfEntries = _entries.Count();
             }
 
             else

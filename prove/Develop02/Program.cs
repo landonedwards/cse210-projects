@@ -7,6 +7,7 @@ class Program
     static void Main(string[] args)
     {
         int choice = -99;
+        int numOfEntries = 0;
 
         Journal journal = new();
 
@@ -30,7 +31,6 @@ class Program
             string stringChoice = Console.ReadLine();
             choice = int.Parse(stringChoice);
 
-
             if (choice == 1)
             {
                 string prompt = promptGenerator.GeneratePrompt();
@@ -42,7 +42,7 @@ class Program
                 DateTime theCurrentTime = DateTime.Now;
                 string date = theCurrentTime.ToShortDateString();
 
-                journal.AddEntry(date, prompt, entry);
+                journal.AddEntry(date, prompt, entry, numOfEntries);
             }
 
             else if (choice == 2)
