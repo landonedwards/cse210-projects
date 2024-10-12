@@ -10,6 +10,6 @@ public class Entry
     // behaviors
     public void Display()
     {
-        Console.WriteLine($"Date: {_date} - Prompt: {_prompt}: \n{_entry}\n");
+        Console.WriteLine($"Date: {_date} - Prompt: {_prompt} \n{_entry}\n");
     }
 }

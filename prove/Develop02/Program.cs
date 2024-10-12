@@ -41,7 +41,7 @@ class Program
 
                 DateTime theCurrentTime = DateTime.Now;
                 string date = theCurrentTime.ToShortDateString();
-                
+
                 journal.AddEntry(date, prompt, entry);
             }
 
@@ -52,12 +52,18 @@ class Program
 
             else if (choice == 3)
             {
+                Console.WriteLine("Enter the name of the file you want to load:");
+                string fileName = Console.ReadLine();
 
+                journal.LoadFile(fileName);
             }
 
             else if (choice == 4)
             {
+                Console.WriteLine("Enter the name of the file you want to save to:");
+                string fileName = Console.ReadLine();
 
+                journal.SaveToFile(fileName);
             }
         }
         while (choice != 5);
