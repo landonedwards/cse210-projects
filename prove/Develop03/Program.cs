@@ -17,7 +17,7 @@ class Program
 
         do
         {
-            Console.WriteLine("Please enter to continue or type 'quit' to finish:");
+            Console.WriteLine("\nPlease enter to continue or type 'quit' to finish:");
             userInput = Console.ReadLine();
 
             if (userInput != "quit")
