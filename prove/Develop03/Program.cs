@@ -2,6 +2,7 @@ using System;
 using System.Runtime.CompilerServices;
 
 // I added functionality in the Scripture class's HideWords() behavior so that the program would hide different words each time the user pressed enter. 
+// Also added a message indicating to the user that all words in the scripture had been hidden. 
 
 class Program
 {
