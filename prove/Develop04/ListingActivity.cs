@@ -53,7 +53,15 @@ public class ListingActivity : Activity
             _numOfResponses += 1;
         }
 
-        Console.WriteLine($"You listed {_numOfResponses} items!\n");
+        if (_numOfResponses > 10)
+        {
+            Console.WriteLine("Excellent! You listed more than 10 items!\n");
+        }
+        else 
+        {
+            Console.WriteLine($"You listed {_numOfResponses} items!\n");
+        }
+        
         DisplayEnd(duration);
     }
 
