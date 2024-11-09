@@ -6,7 +6,7 @@ public class BreathingActivity : Activity
 
     // methods
 
-    public BreathingActivity() : base("Breathing Activity", "This activity will help you relax by walking you through breathing in and out slowly. Clear your mind and focus on your breathing.", 20)
+    public BreathingActivity() : base("Breathing Activity", "This activity will help you relax by walking you through breathing in and out slowly. Clear your mind and focus on your breathing.\n\nHow long, in seconds, would you like your session (please enter at least 10)? ", 20)
     {
     }
 
@@ -33,31 +33,33 @@ public class BreathingActivity : Activity
         }
 
         Console.Clear();
-        
+
         Console.WriteLine("Get ready...");
-        Spinner();
+        Spinner(300);
         Console.WriteLine();
 
         for (int i = 0; i < fullCycles; i++)
         {
-            Console.WriteLine("Breathe in...");
-            Countdown(inhale * 1000);
+            Console.Write("Breathe in...");
+            Countdown(inhale);
+            Console.WriteLine();
 
             Console.Write("Now breathe out...");
-            Countdown(exhale * 1000);
+            Countdown(exhale);
 
-            Console.WriteLine();
+            Console.WriteLine("\n");
         }
 
         if (remainingTime > 0)
         {
-            Console.WriteLine("Breathe in...");
-            Countdown(remainingInhale * 1000);
+            Console.Write("Breathe in...");
+            Countdown(remainingInhale);
+            Console.WriteLine();
 
             Console.Write("Now breathe out...");
-            Countdown(remainingExhale * 1000);
+            Countdown(remainingExhale);
 
-            Console.WriteLine();
+            Console.WriteLine("\n");
         }
 
         DisplayEnd(duration);

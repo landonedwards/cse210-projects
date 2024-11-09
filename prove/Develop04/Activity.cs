@@ -15,25 +15,27 @@ public class Activity
 
     public void DisplayStart()
     {
-        Console.Write($"Welcome to the {_activityName}.\n\n{_activityDescription}\n\nHow long, in seconds, would you like your session (please enter at least 10)? ");
+        Console.Write($"Welcome to the {_activityName}.\n\n{_activityDescription}");
     }
 
     public void DisplayEnd(int _duration)
     {
-        Console.WriteLine("Well done!!\n");
-        Console.WriteLine($"You have completed {_duration} seconds of the {_activityName}.");
+        Console.WriteLine("Well done!!");
+        Spinner(300);
+        Console.WriteLine($"\nYou have completed {_duration} seconds of the {_activityName}.");
+        Spinner(300);
     }
 
-    public void Spinner()
+    public void Spinner(int milliseconds)
     {
-        List<string> animationList = new() {"|", "/", "-", "\\"};
+        List<string> animationList = new() { "|", "/", "-", "\\" };
 
         for (int i = 3; i > 0; i--)
         {
             foreach (string s in animationList)
             {
                 Console.Write(s);
-                Thread.Sleep(250);
+                Thread.Sleep(milliseconds);
                 Console.Write("\b \b");
             }
         }
@@ -42,11 +44,21 @@ public class Activity
 
     public void Countdown(int seconds)
     {
-        for (int i = _duration; i > 0; i--)
+        for (int i = seconds; i > 0; i--)
         {
             Console.Write(i);
             Thread.Sleep(1000);
             Console.Write("\b \b");
         }
     }
+
+    // public void CompleteActivity()
+    // {
+    //     _timesCompleted ++;
+    // }
+
+    // public int GetTimesCompleted()
+    // {
+    //     return _timesCompleted;
+    // }
 }
