@@ -29,5 +29,10 @@ public class SimpleGoal : Goal
     {
         return $"SimpleGoal:{_name},{_description},{_points},{IsComplete()}";
     }
+
+    public void CompleteGoal()
+    {
+        _isComplete = true;
+    }
 }
 

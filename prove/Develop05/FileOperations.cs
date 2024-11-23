@@ -58,7 +58,15 @@ public class FileOperations
         switch(goalType)
         {
             case "SimpleGoal":
-                return new SimpleGoal(name, description, points);
+                bool isComplete = bool.Parse(goalData[3]);
+                SimpleGoal simpleGoal = new(name, description, points);
+                
+                if (isComplete)
+                {
+                    simpleGoal.CompleteGoal();
+                }
+               
+                return  simpleGoal;
 
             case "EternalGoal":
                 return new EternalGoal(name, description, points);

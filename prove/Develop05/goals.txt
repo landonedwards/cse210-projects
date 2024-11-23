@@ -1,4 +1,0 @@
-Landon:250
-SimpleGoal:Give a talk,yeah do it,100,True
-EternalGoal:Study scriptures,Study for at least 10 minutes,50
-ChecklistGoal:Attend the tempe,Attend and peform,50,500,3,2
