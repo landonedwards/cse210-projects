@@ -10,10 +10,12 @@ public class FileOperations
         _fileName = fileName;
     }
 
-    public void SaveToFile(List<Goal> goals, string fileName)
+    public void SaveToFile(List<Goal> goals, string fileName, string userName, int totalPoints)
     {
         using (StreamWriter outputFile = new(fileName))
         {
+            outputFile.WriteLine($"{userName}:{totalPoints}");
+
             foreach (Goal goal in goals)
             {
                 string formattedGoal = goal.FormatGoal();
@@ -22,23 +24,27 @@ public class FileOperations
         }
     }
 
-    public List<Goal> LoadFromFile(string fileName)
+    public (string userName, int totalPoints, List<Goal> goals) LoadFromFile(string fileName)
     {
         List<Goal> goals = new();
 
         string[] lines = File.ReadAllLines(fileName);
 
-        foreach (string line in lines)
-        {
-            string[] parts = line.Split(":");
-            string goalType = parts[0];
-            string goalData = parts[1];
+        string[] userInfo = lines[0].Split(":");
+        string userName = userInfo[0];
+        int totalPoints = int.Parse(userInfo[1]);
 
-            Goal newGoal = CreateGoal(goalType, goalData);
-            goals.Add(newGoal);
-        }
+            for (int i = 1; i < lines.Length; i++)
+            {
+                string[] parts = lines[i].Split(":");
+                string goalType = parts[0];
+                string goalData = parts[1];
 
-        return goals;
+                Goal newGoal = CreateGoal(goalType, goalData);
+                goals.Add(newGoal);
+            }
+
+        return (userName, totalPoints, goals);
     }
 
     public Goal CreateGoal(string goalType, string goalDetails)

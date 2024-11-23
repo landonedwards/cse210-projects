@@ -20,12 +20,13 @@ public class User
 
     public Goal GetGoal(int goalIndex)
     {
+        goalIndex--;
+        
         if (goalIndex < 0 || goalIndex >= _goals.Count)
         {
             return null;
         }
 
-        goalIndex += 1;
         return _goals[goalIndex];
     }
 
@@ -72,11 +73,10 @@ public class User
 
     public void DisplayGoals()
     {
+        int numGoal = 1;
+
         foreach (Goal goal in _goals)
         {
-            int numGoal = 0;
-            numGoal += 1;
-
             if (goal.IsComplete())
             {
                 Console.WriteLine($"{numGoal}. [X] " + goal.DisplayGoal());
@@ -86,13 +86,16 @@ public class User
             {
                 Console.WriteLine($"{numGoal}. [ ] " + goal.DisplayGoal());
             }
+            
+            numGoal ++;
         }
     }
 
-    public void DisplayPoints()
+    public int DisplayPoints()
     {
         Console.WriteLine($"You have {_totalPoints} points.");
         Console.WriteLine($"You are Lvl {_level}.");
+        return _totalPoints;
     }
 
     public void RetrieveGoals(List<Goal> goals)

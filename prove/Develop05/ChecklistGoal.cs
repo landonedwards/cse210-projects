@@ -12,7 +12,7 @@ public class ChecklistGoal : Goal
     
     public ChecklistGoal(string name, string description, int points, int bonusPoints, int targetCount, int completionCount = 0) : base(name, description, points)
     {
-        // _completionCount = completionCount;
+        _completionCount = completionCount;
         _targetCount = targetCount;
         _bonusPoints = bonusPoints;
         _bonusAwarded = false;

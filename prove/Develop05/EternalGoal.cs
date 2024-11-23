@@ -25,7 +25,7 @@ public class EternalGoal : Goal
 
     public override string FormatGoal()
     {
-        return $"EternalGoal:{_name},{_description},{_points},{IsComplete()}";
+        return $"EternalGoal:{_name},{_description},{_points}";
     }
 
 }

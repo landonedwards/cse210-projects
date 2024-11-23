@@ -5,7 +5,7 @@ class Program
     static void Main(string[] args)
     {
         Console.WriteLine("Welcome to the Eternal Quest program.");
-        Console.WriteLine("What is your name? ");
+        Console.Write("What is your name? ");
         string userName = Console.ReadLine();
 
         User user = new(userName);
@@ -15,7 +15,7 @@ class Program
 
         while (running)
         {
-            Console.WriteLine($"Hello {userName},");
+            Console.WriteLine($"\nHello {userName},\n");
             user.DisplayPoints();
             Console.WriteLine();
 
@@ -26,28 +26,28 @@ class Program
             Console.WriteLine(" 4. Load Goals");
             Console.WriteLine(" 5. Record Event");
             Console.WriteLine(" 6. Quit");
-            Console.WriteLine("Select a choice from the menu: ");
+            Console.Write("Select a choice from the menu: ");
 
             string userChoice = Console.ReadLine();
 
             switch (userChoice)
             {
                 case "1":
-                    Console.WriteLine("The type of Goals are:");
+                    Console.WriteLine("\nThe type of Goals are:");
                     Console.WriteLine(" 1. Simple Goal");
                     Console.WriteLine(" 2. Eternal Goal");
                     Console.WriteLine(" 3. Checklist Goal");
 
-                    Console.WriteLine("Which type of goal would you like to create? ");
+                    Console.Write("Which type of goal would you like to create? ");
                     string goalType = Console.ReadLine();
 
-                    Console.WriteLine("What is the name of the goal? ");
+                    Console.Write("What is the name of the goal? ");
                     string goalName = Console.ReadLine();
 
-                    Console.WriteLine("Please provide a short description of it: ");
+                    Console.Write("Please provide a short description of it: ");
                     string goalDescription = Console.ReadLine();
 
-                    Console.WriteLine("How many points should this goal be worth? ");
+                    Console.Write("How many points should this goal be worth? ");
                     string stringPoints = Console.ReadLine();
                     int goalPoints = int.Parse(stringPoints);
 
@@ -64,15 +64,15 @@ class Program
                             break;
 
                         case "3":
-                            Console.WriteLine("How many times does this goal need to be accomplished for a bonus? ");
+                            Console.Write("How many times does this goal need to be accomplished for a bonus? ");
                             string stringCount = Console.ReadLine();
                             int targetCount = int.Parse(stringCount);
 
-                            Console.WriteLine("What is the bonus for accomplishing it that many times? ");
+                            Console.Write("What is the bonus for accomplishing it that many times? ");
                             string stringBonus = Console.ReadLine();
                             int bonusPoints = int.Parse(stringBonus);
 
-                            ChecklistGoal newChecklist = new(goalName, goalDescription, goalPoints, targetCount, bonusPoints);
+                            ChecklistGoal newChecklist = new(goalName, goalDescription, goalPoints, bonusPoints, targetCount);
                             user.AddGoal(newChecklist);
                             break;
 
@@ -83,31 +83,35 @@ class Program
                     break;
 
                 case "2":
-                    Console.WriteLine("The goals are:");
+                    Console.WriteLine("\nThe goals are:");
                     user.DisplayGoals();
                     break;
 
                 case "3":
-                    Console.WriteLine("What is the filename for the goal file? ");
+                    Console.Write("What is the filename for the goal file? ");
                     string saveFile = Console.ReadLine();
                     
                     List<Goal> goals = user.GetGoals();
+                    int totalPoints = user.DisplayPoints();
 
-                    fileOps.SaveToFile(goals, saveFile);
+                    fileOps.SaveToFile(goals, saveFile, userName, totalPoints);
                     break;
 
                 case "4":
-                    Console.WriteLine("What is the filename for the goal file? ");
+                    Console.Write("What is the filename for the goal file? ");
                     string loadFile = Console.ReadLine();
 
-                    List<Goal> goalList = fileOps.LoadFromFile(loadFile);
-                    user.RetrieveGoals(goalList);
+                    (string loadedUserName, int loadedPoints, List<Goal> loadedGoals) = fileOps.LoadFromFile(loadFile);
+
+                    user = new(loadedUserName);
+                    user.AddPoints(loadedPoints);
+                    user.RetrieveGoals(loadedGoals);
                     break;
 
                 case "5":
                     user.DisplayGoals();
 
-                    Console.WriteLine("Which goal did you accomplish? ");
+                    Console.Write("Which goal did you accomplish? ");
                     string stringGoal = Console.ReadLine();
                     int goalIndex = int.Parse(stringGoal);
 
@@ -120,6 +124,10 @@ class Program
                 case "6":
                     Console.WriteLine("Thank you for using the Eternal Quest program.");
                     running = false;
+                    break;
+                
+                default:
+                    Console.WriteLine("Invalid option. Please choose one of the options in the menu.");
                     break;
             }
 
