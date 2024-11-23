@@ -9,6 +9,7 @@ class Program
         string userName = Console.ReadLine();
 
         User user = new(userName);
+        FileOperations fileOps = new();
 
         bool running = true;
 
@@ -87,11 +88,20 @@ class Program
                     break;
 
                 case "3":
-                
+                    Console.WriteLine("What is the filename for the goal file? ");
+                    string saveFile = Console.ReadLine();
+                    
+                    List<Goal> goals = user.GetGoals();
+
+                    fileOps.SaveToFile(goals, saveFile);
                     break;
 
                 case "4":
+                    Console.WriteLine("What is the filename for the goal file? ");
+                    string loadFile = Console.ReadLine();
 
+                    List<Goal> goalList = fileOps.LoadFromFile(loadFile);
+                    user.RetrieveGoals(goalList);
                     break;
 
                 case "5":

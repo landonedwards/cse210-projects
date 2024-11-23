@@ -5,8 +5,9 @@ public class FileOperations
 
     // methods
 
-    public FileOperations(string _fileName = "unknown")
+    public FileOperations(string fileName = "unknown")
     {
+        _fileName = fileName;
     }
 
     public void SaveToFile(List<Goal> goals, string fileName)

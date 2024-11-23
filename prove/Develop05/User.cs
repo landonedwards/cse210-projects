@@ -29,6 +29,11 @@ public class User
         return _goals[goalIndex];
     }
 
+    public List<Goal> GetGoals()
+    {
+        return _goals;
+    }
+
     public void AddGoal(Goal newGoal)
     {
         _goals.Add(newGoal);
@@ -88,5 +93,10 @@ public class User
     {
         Console.WriteLine($"You have {_totalPoints} points.");
         Console.WriteLine($"You are Lvl {_level}.");
+    }
+
+    public void RetrieveGoals(List<Goal> goals)
+    {
+        _goals = goals;
     }
 }
