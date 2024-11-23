@@ -1,3 +1,4 @@
+using System.Formats.Asn1;
 using System.Runtime.InteropServices;
 
 public class User
@@ -21,7 +22,7 @@ public class User
     public Goal GetGoal(int goalIndex)
     {
         goalIndex--;
-        
+
         if (goalIndex < 0 || goalIndex >= _goals.Count)
         {
             return null;
@@ -55,19 +56,21 @@ public class User
 
     public void UpdateLevel()
     {
-        if (_totalPoints > 500)
+        if (_totalPoints > 2000)
         {
-            _level += 1;
-            
-            if (_totalPoints > 1200)
-            {
-                _level += 1;
-
-                if (_totalPoints > 2000)
-                {
-                    _level += 1;
-                }
-            }
+            _level = 4;
+        }
+        else if (_totalPoints > 1200)
+        {
+            _level = 3;
+        }
+        else if (_totalPoints > 500)
+        {
+            _level = 2;
+        }
+        else
+        {
+            _level = 1;
         }
     }
 

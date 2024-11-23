@@ -76,8 +76,12 @@ public class FileOperations
                 int bonusPoints = int.Parse(goalData[3]);
                 int targetCount = int.Parse(goalData[4]);
                 int completionCount = int.Parse(goalData[5]);
+                bool bonusAwarded = bool.Parse(goalData[6]);
 
-                return new ChecklistGoal(name, description, points, bonusPoints, targetCount, completionCount);
+                ChecklistGoal checklistGoal = new(name, description, points, bonusPoints, targetCount, completionCount);
+                checklistGoal.BonusAwarded(bonusAwarded);
+
+                return checklistGoal;
 
             default:
                 Console.WriteLine("Invalid goal type.");

@@ -49,6 +49,11 @@ public class ChecklistGoal : Goal
 
     public override string FormatGoal()
     {
-        return $"ChecklistGoal:{_name},{_description},{_points},{_bonusPoints},{_targetCount},{_completionCount}"; 
+        return $"ChecklistGoal:{_name},{_description},{_points},{_bonusPoints},{_targetCount},{_completionCount},{_bonusAwarded}"; 
+    }
+
+    public void BonusAwarded(bool awarded)
+    {
+        _bonusAwarded = awarded;
     }
 }
