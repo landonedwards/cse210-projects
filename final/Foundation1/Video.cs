@@ -18,7 +18,7 @@ public class Video
         _comments = new();
     }
 
-    public void AddComment(Comment comment1, Comment comment2, Comment comment3, Comment comment4) 
+    public void AddComment(Comment comment1, Comment comment2, Comment comment3, Comment comment4)
     {
         _comments.Add(comment1);
         _comments.Add(comment2);
@@ -27,18 +27,21 @@ public class Video
     }
 
     public int ReturnNumOfComments()
-    {   
+    {
         return _comments.Count;
     }
 
     public void DisplayInfo()
     {
-        Console.WriteLine($"\n{_title}\nby {_author}\nDuration: {_length} seconds\n{ReturnNumOfComments()} comments:");
+        Console.WriteLine("---------------------------------------");
+        Console.WriteLine($"{_title}\nby {_author}\nDuration: {_length} seconds\n{ReturnNumOfComments()} comments:");
+        Console.WriteLine("---------------------------------------");
 
         foreach (Comment comment in _comments)
         {
-            Console.WriteLine(comment.GetComment());
+            Console.WriteLine($"{comment.GetComment()}\n");
         }
+
     }
 
 }

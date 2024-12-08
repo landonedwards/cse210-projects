@@ -4,7 +4,9 @@ class Program
 {
     static void Main(string[] args)
     {
-        Console.WriteLine("Welcome to YouTube");
+        Console.WriteLine("Welcome to YouTube\n");
+
+        List<Video> videos = new();
 
         Video video1 = new("Red Hot 1000 Degree Knife vs Live Hog", "Kevin's Knives", 620);
         Comment v1comment1 = new("GamerGus67", "That hog squealed like a pig!");
@@ -13,7 +15,7 @@ class Program
         Comment v1comment4 = new("ILoveStuartLittle", "I don't know man.. that blood looked pretty realistic.");
 
         video1.AddComment(v1comment1, v1comment2, v1comment3, v1comment4);
-        video1.DisplayInfo();
+        videos.Add(video1);
 
 
         Video video2 = new("SURVIVE this plane crash and win $1,000,000!", "MrBeast", 1200);
@@ -23,7 +25,8 @@ class Program
         Comment v2comment4 = new("William G.", "This doesn't seem safe. Edit: It was not.");
 
         video2.AddComment(v2comment1, v2comment2, v2comment3, v2comment4);
-        video2.DisplayInfo();
+        videos.Add(video2);
+
 
         Video video3 = new("Let's Play Minecraft Survival #23", "SmelvinPlayz", 845);
         Comment v3comment1 = new("DirtyDan", "You've played over 5 hours now, but you haven't made ANY progress. You should at least have SOME type of shelter by now.");
@@ -32,7 +35,13 @@ class Program
         Comment v3comment4 = new("KrazyKat323", "Bro really hopped on his burner account to hype himself up.");
 
         video3.AddComment(v3comment1, v3comment2, v3comment3, v3comment4);
-        video3.DisplayInfo();
+        videos.Add(video3);
+
+        foreach (Video video in videos)
+        {
+            video.DisplayInfo();
+        }
+
 
     }
 }
