@@ -29,7 +29,7 @@ class Program
 
 
         Video video3 = new("Let's Play Minecraft Survival #23", "SmelvinPlayz", 845);
-        Comment v3comment1 = new("DirtyDan", "You've played over 5 hours now, but you haven't made ANY progress. You should at least have SOME type of shelter by now.");
+        Comment v3comment1 = new("DirtyDan", "You've played over 5 hours now, but you haven't made ANY progress. Dude still has wooden tools LOL.");
         Comment v3comment2 = new("PastorTom", "SmelvinPlayz? More like SmelvinSucks! You just spent the entire video walking in circles until you fell down a canyon.");
         Comment v3comment3 = new("NotSmelvinJustAFan", "Dude, I love your videos so much! Waking up to a new video of yours is like an early Christmas! I wish you were MY gaming guru.");
         Comment v3comment4 = new("KrazyKat323", "Bro really hopped on his burner account to hype himself up.");
@@ -41,7 +41,6 @@ class Program
         {
             video.DisplayInfo();
         }
-
 
     }
 }
