@@ -46,18 +46,27 @@ public class Order
 
     public string PackingLabel()
     {
-        string label = "";
+        string label = "================ Packing Label ================\n";
+        label += "Product Name                  Product ID\n";
+        label += "----------------------------------------------\n";
 
         foreach (Product product in _products)
         {
-            label += $"{product.GetProductName()} {product.GetProductId()}\n";
+            label += $"{product.GetProductName(),-29} {product.GetProductId(),-19}\n";
         }
+
+        label += "----------------------------------------------";
 
         return label;
     }
 
     public string ShippingLabel()
     {
-        return $"{_customer.GetName()} {_customer.GetAddress()}";
+        string label = "================ Shipping Label ================\n";
+        label += $"Customer Name: {_customer.GetName()}\n";
+        label += $"Address:\n";
+        label += $"{_customer.GetAddress()}\n";
+        label += "------------------------------------------------";
+        return label;
     }
 }

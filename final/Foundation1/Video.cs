@@ -33,7 +33,7 @@ public class Video
 
     public void DisplayInfo()
     {
-        Console.WriteLine($"{_title}\n{_author}\n{_length} seconds\n{ReturnNumOfComments()}");
+        Console.WriteLine($"\n{_title}\nby {_author}\nDuration: {_length} seconds\n{ReturnNumOfComments()} comments:");
 
         foreach (Comment comment in _comments)
         {
