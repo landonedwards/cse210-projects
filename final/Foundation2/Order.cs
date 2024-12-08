@@ -65,8 +65,8 @@ public class Order
         string label = "================ Shipping Label ================\n";
         label += $"Customer Name: {_customer.GetName()}\n";
         label += $"Address:\n";
-        label += $"{_customer.GetAddress()}\n";
-        label += "------------------------------------------------";
+        label += $"{_customer.GetAddress()}";
+        label += "\n------------------------------------------------";
         return label;
     }
 }
