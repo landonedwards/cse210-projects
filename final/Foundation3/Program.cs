@@ -21,9 +21,9 @@ class Program
 
         foreach (Event evnt in events)
         {
-            evnt.StandardMessage();
-            evnt.FullMessage();
-            evnt.ShortMessage();
+            Console.WriteLine(evnt.StandardMessage());
+            Console.WriteLine(evnt.FullMessage());
+            Console.WriteLine(evnt.ShortMessage());
         }
 
         // lecture.StandardMessage();
