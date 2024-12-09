@@ -10,7 +10,7 @@ class Program
 
         Video video1 = new("Red Hot 1000 Degree Knife vs Live Hog", "Kevin's Knives", 620);
         Comment v1comment1 = new("GamerGus67", "That hog squealed like a pig!");
-        Comment v1comment2 = new("Sally Gibbons", "Oh my gosh! How can people watch this! This is absolutely apalling. All life is precious; this sentiment is clearly lost on you.");
+        Comment v1comment2 = new("Sally Gibbons", "Oh my gosh! How can people watch this! This is absolutely apalling. All life is precious; that sentiment is clearly lost on you.");
         Comment v1comment3 = new("JonklerFan352", "@Sally Gibbons bro calm down. it's obviously fake. just let people have fun.");
         Comment v1comment4 = new("ILoveStuartLittle", "I don't know man.. that blood looked pretty realistic.");
 
