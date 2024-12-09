@@ -11,7 +11,7 @@ public class Cycling : Activity
 
     public override double CalculateDistance()
     {
-        return _speed * (GetDuration() / 60);
+        return _speed * (GetDuration() / 60.0);
     }
     public override double CalculateSpeed()
     {

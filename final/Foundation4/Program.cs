@@ -6,18 +6,18 @@ class Program
     {
         List<Activity> activities = new();
 
-        Running running = new("", 0, 0);
+        Running running = new("06 Dec 2024", 25, 3.1);
         activities.Add(running);
 
-        Cycling cycling = new("", 0, 0);
+        Cycling cycling = new("07 Dec 2024", 35, 15);
         activities.Add(cycling);
 
-        Swimming swimming = new("", 0, 0);
+        Swimming swimming = new("08 Dec 2024", 60, 40);
         activities.Add(swimming);
 
         foreach (Activity activity in activities)
         {
-            activity.GetSummary();
+            Console.WriteLine(activity.GetSummary());
         }
     }
 }
