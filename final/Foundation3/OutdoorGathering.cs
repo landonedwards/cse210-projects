@@ -11,6 +11,6 @@ public class OutdoorGathering : Event
 
     public override string FullMessage()
     {
-        return base.StandardMessage() + $"Weather Forecast: {_weatherConditions}";
+        return base.FullMessage() + $"\nWeather Forecast: {_weatherConditions}";
     }
 }

@@ -11,6 +11,6 @@ public class Reception : Event
 
     public override string FullMessage()
     {
-        return base.StandardMessage() + $"RSVP Email: {_rsvpEmail}";
+        return base.FullMessage() + $"\nRSVP Email: {_rsvpEmail}";
     }
 }

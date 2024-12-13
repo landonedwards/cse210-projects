@@ -12,12 +12,13 @@ class Program
         Cycling cycling = new("07 Dec 2024", 35, 15);
         activities.Add(cycling);
 
-        Swimming swimming = new("08 Dec 2024", 60, 40);
+        Swimming swimming = new("08 Dec 2024", 55, 40);
         activities.Add(swimming);
 
         foreach (Activity activity in activities)
         {
             Console.WriteLine(activity.GetSummary());
+            Console.WriteLine();
         }
     }
 }

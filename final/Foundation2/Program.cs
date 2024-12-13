@@ -20,7 +20,7 @@ class Program
         Console.WriteLine($"Total Cost: ${order1.CalculateTotalCost():F2}");
         Console.WriteLine("===============================================\n");
 
-        // // for order 2
+        // for order 2
         // I know that Wales isn't technically a state or province.
         Address address2 = new("342 Round Table Way", "Camelot", "Wales", "UK");
 

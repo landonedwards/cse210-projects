@@ -31,6 +31,6 @@ public class Activity
     }
     public string GetSummary()
     {
-        return $"{_date} {_activityName} ({_duration} min) - Distance: {CalculateDistance():F2} mile(s), Speed: {CalculateSpeed():F2} mph, Pace: {CalculatePace():F2} min per mile";
+        return $"{_date} {_activityName} ({_duration} min) - Distance: {CalculateDistance():F1} mile(s), Speed: {CalculateSpeed():F1} mph, Pace: {CalculatePace():F1} min per mile";
     }
 }

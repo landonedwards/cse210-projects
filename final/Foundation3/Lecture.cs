@@ -15,6 +15,6 @@ public class Lecture : Event
 
     public override string FullMessage()
     {
-        return base.StandardMessage() + $"\nSpeaker: {_speaker}\nCapacity: {_maxCapacity} attendees";
+        return base.FullMessage() + $"\nSpeaker: {_speaker}\nCapacity: {_maxCapacity} attendees";
     }
 }
